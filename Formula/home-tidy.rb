@@ -24,6 +24,9 @@ class HomeTidy < Formula
               "CONFIG_DIR=\"#{prefix}/config\""
       s.gsub! 'LIB_DIR="${SCRIPT_DIR}/lib"',
               "LIB_DIR=\"#{libexec}/lib\""
+      # Version fix: Inject version directly into the script
+      s.gsub! 'local version="unknown"',
+              "local version=\"#{version}\""
     end
   end
 
